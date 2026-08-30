@@ -1,0 +1,353 @@
+/*  The color panel */
+:root{
+    --bg: #d8e0d2;
+    --sidebar-bg: #151b22;
+    --sidebar-text: #cbcec2;
+    --sidebar-active: #334155;
+    --accent: #dfe9aa;
+    --panel-bg: #ffffff;
+    --border: #e5e7eb;
+
+}
+
+
+*{box-sizing: border-box;}
+
+
+/* body */
+#backgroundImage{
+position: fixed;
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: blur(8px);
+transform: scale(1.1);
+z-index: -1;
+}
+
+body{
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: var(--bg);
+display: flex;
+min-height: 100vh;
+transition: background 0.7s ease, color 0.7s ease;
+}
+body.dark-mode #unit-details{
+    background: #1f2937;
+    color: #374151;
+}
+body.dark-mode #unit-details h3{
+   
+    color: #ffffff;
+}
+body.dark-mode #unit-details p,
+body.dark-mode #unit-details strong{
+    color: #e5e7eb;
+}
+
+body.dark-mode{
+    background: #191c22;
+    color: #e5e7eb;
+}
+body.dark-mode #side-bar{
+    background: #12151b;
+}
+#night-mode{
+   
+  
+   display: flex;
+   align-items: center;
+   gap: 8px;
+    
+
+    padding:5px 35px;
+    border-radius: 20px;
+    transition: background 0.3 ease , color 0.3s ease;
+
+    position: absolute;
+    bottom: 65px;
+    left: 160px;
+    bottom: 70px;
+    background-color: var(--sidebar-bg);
+    cursor: pointer;
+    
+
+}
+
+/*       menu    */
+
+#side-bar{
+    width: 290px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 20px 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    position: relative;
+}
+
+
+#side-bar h1{
+    font-size: 24px;
+    color: rgb(233, 187, 102);
+    padding: 0 20px 20px;
+    margin: 0;
+  
+}
+
+
+/*       The styling of nav-bar    */
+.nav-item{
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--sidebar-text);
+    padding: 12px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.nav-item.active{
+    background: var(--sidebar-active);
+    color: rgb(238, 234, 234);
+    border-left: 3px solid var(--accent);
+}
+
+
+
+
+
+
+/*       hiding of contents of home,tenant,settings    */
+.panel {
+    display: none;
+}
+.panel.active{
+    display: block;
+}
+
+
+/*       The contents   */
+
+
+/*-------------------------------------------The tenants grid   */
+.tenants h2{
+   font-family:monospace;
+   font-size: 30px;
+   padding: 20px;
+}
+#units-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+    padding-left: 100px;
+}
+
+.unit-box{
+    position: relative;
+    background: var(--sidebar-active);
+    padding: 86px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+   
+}
+/*       the added latest delete nalang if di gumana  */
+.unit-box::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg);
+    margin: 0 auto 12px;
+}
+.unit-box:hover{
+    transform: scale(1.1);
+}
+.unit-box .unit-number{
+font-family: 'Courirer New', monospace;
+font-size: 22px;
+font-weight: 500;
+color: #f4f1e8;
+letter-spacing: 1px;
+}
+.unit-box .unit-status{
+    margin-top: 10px;
+    font-size: 11px;
+    text-transform: lowercase;
+    padding: 4px 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+/*       the added latest delete nalang if di gumana  */
+
+.unit-box.available{
+    background: #22c55e;
+    
+}
+.unit-box.occupied{
+    background: #ef4444;
+}
+.key-icon{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 28px;
+   background: rgb(248, 245, 245);
+}
+.check-icon{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 26px;
+    background: rgb(248, 245, 245);
+
+}
+/*-------------------------------------The tenants info when clicked   */
+#unit-details{
+    margin-top: 20px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--panel-bg);
+}
+#move-in-form input{
+    border-radius: 5px;
+
+}
+#move-in-form button{
+    padding: 2px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+
+}
+#move-in-form button:active{
+   background: #4a5664;
+   transform: scale(1.1);
+
+}
+
+/*       The tenants grid   */
+#signup-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    padding-left: 70px;
+    
+}
+.sign-up.panel{
+    align-items: center;
+}
+/*       The SIGN UP FIX THAT WOHNT SHOW UP AUG 26   */
+.sign-up.hidden{
+    display: none;
+}
+#night-mode-text{
+    position: absolute;
+     
+    left: 30px;
+    bottom: 60px;
+    
+
+}
+
+
+
+#log-out{
+    color: var(--sidebar-text);
+    display: block;
+    background-color: var(--sidebar-bg);
+    width: 230px;
+    text-align: center;
+margin-left: 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    bottom: 25px;
+    left: 15px;
+    
+
+    position: absolute;
+  
+    cursor: pointer;
+    
+
+}
+#log-out:hover{
+   color: rgb(221, 84, 84);
+    cursor: pointer;
+    border: 2px solid rgb(196, 72, 72);
+
+}
+
+#auth-screen{
+  
+    margin:  auto auto;
+
+    text-align: center;
+      max-width: 980px;
+}
+
+#auth-screen h1{
+    font-family: 'fraunces', serif;
+    font-weight: 700;
+    font-size: 26px;
+}
+#auth-screen #back-to-login{
+   text-align: center;
+   margin-top: 10px;
+   margin-left: 80px;
+}
+.Log-in {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(21,27 34,0.86);
+    text-align: left;
+    align-items: center;
+}
+
+#login-form input, #signup-form input{
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-family: 'inter', sans-serif;
+    background: #fafaf9;
+    transition: border-color .15s ease, background .15s ease;
+}
+#login-form button, #signup-form button{
+    outline: none;
+    border-color: var(--accent);
+   background: #fff;
+}
+#login-form button, #signup-form button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--sidebar-bg);
+    color: var(--bg);
+    cursor: pointer;
+    transition: background .15s ease
+}
+#login-form button:hover, #signup-form button:hover{
+    background: #232b35;
+    transform: scale(1.02);
+}
+.sign-up.message{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #6b7280;
+}
