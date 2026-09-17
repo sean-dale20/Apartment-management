@@ -109,7 +109,8 @@ function showUnitDetails(unit){
         `;
         document.getElementById('move-in-form').addEventListener('submit', async function(event){
             event.preventDefault();
-            await moveInTenant(unit);
+            payment(unit, name, phone, email);
+        
         });
 
     }
@@ -136,45 +137,42 @@ nightMode.addEventListener('click', function(){
 
 
 
-//adding new tenant
 
-async function moveInTenant(unit){
-    const name = document.getElementById('move-in-name').value;
-    const phone = document.getElementById('move-in-phone').value;
-    const email = document.getElementById('move-in-email').value;
 
-    const{ data: newTenant, error: tenantError} = await database
-        .from('tenants')
-        .insert({
-            name:name,
-            'unit_no.': unit.unit_no,
-            phone: phone,
-            email: email
 
-        })
-        .select()
-        .single();
-
-        if(tenantError){
-            console.error('Failed to create tenant', tenantError.message);
-            return;
-        }
-
-        const{ error: unitError } = await database
+    async function loadStats() {
+        const { data, error}= await database
         .from('units')
-        .update({
-            status: 'occupied',
-            tenant_id: newTenant.id 
-        })
-        .eq('id', unit.id);
+        .select('*');
 
-        if(unitError){
-            console.error('Failed to update unit:', unitError.message);
+
+
+        if(error){
+            console.error("error fetching units data", error.message)
             return;
         }
-        console.log('moved in:', newTenant);
 
-        loadUnits();
-        showUnitDetails({ ...unit, status: 'occupied', tenants: newTenant});
+        let occupiedCount = 0;
+        let availableCount = 0;
+
+
+        data.forEach(unit =>{
+            if(unit.status === 'occupied'){
+                occupiedCount = occupiedCount + 1;
+
+            }
+            else if(unit.status === 'available'){
+                availableCount = availableCount + 1;
+            }
+            
+        });
+        document.getElementById('occupied-count').textContent = occupiedCount;
+        document.getElementById('available-units').textContent = availableCount;
+        document.getElementById('total-count').textContent = data.length;
+
+
+
+
+        
     }
-
+    loadStats();

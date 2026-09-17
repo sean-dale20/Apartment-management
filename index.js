@@ -77,6 +77,7 @@ login.addEventListener('submit', async function(event){
 
 });
 
+//  logged in checks
 
 async function checkLoginStatus(){
     const {data} = await database.auth.getSession();
@@ -86,7 +87,6 @@ async function checkLoginStatus(){
     const authScreen = document.getElementById('auth-screen');
     const loggedInView = document.getElementById('loggedIn');
 
-//  for greeting example if logged in hello dale
     if (loggedIn){
         authScreen.style.display = 'none';
         loggedInView.style.display = 'flex';
@@ -94,6 +94,14 @@ backgroundImage.style.display = 'none';
 
         const name = data.session.user.user_metadata.name;
 
+
+
+
+
+
+
+        
+//  for greeting example if logged in hello dale
         const greet = document.getElementById("greeting");
         greet.textContent = "hello," + name;
 
