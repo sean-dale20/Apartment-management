@@ -31,7 +31,8 @@ password: password,
 options:{
     data:{
 name:name,
-phone:phone
+phone:phone,
+role: 'tenant'
     }
 }
 });
@@ -103,7 +104,7 @@ backgroundImage.style.display = 'none';
         
 //  for greeting example if logged in hello dale
         const greet = document.getElementById("greeting");
-        greet.textContent = "hello," + name;
+        greet.textContent = "Hello," + name;
 
 
     }else {
@@ -141,7 +142,7 @@ backToLogIn.addEventListener('click', function(event){
     event.preventDefault();
     signUp.style.display = 'none';
     loginForm.style.display = 'block';
-     signUpMessage.style.display = 'block';
+     signUpMessage.style.display = 'inline';
      loginpad.style.display ='block'
 });
 

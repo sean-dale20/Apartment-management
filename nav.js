@@ -26,6 +26,23 @@ buttones.addEventListener('click', function(){
   
 });
 });
+//night mode
+const nightMode = document.querySelector('#night-mode');
+const toggleThumb = document.querySelector('.toggle-thumb');
+
+
+nightMode.addEventListener('click', function(){
+    document.body.classList.toggle('dark-mode');
+
+    if(document.body.classList.contains('dark-mode')){
+        toggleThumb.textContent = '☀️';
+
+    }else{
+        toggleThumb.textContent = '🌙';
+    }
+
+});
+
 //.const homeSignUp = document.getElementById("home-sign-up");
 //.const navItemSignUp = document.querySelector('[data-target="sign-up"]');
 

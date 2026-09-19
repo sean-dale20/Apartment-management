@@ -6,6 +6,11 @@
     <title>Apartment management</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <img
@@ -46,8 +51,8 @@
           <input type="text" id="signup-name" placeholder="Name" />
           <input type="phone" id="signup-phone" placeholder="Phone" />
           <button type="submit" id="signup-btn">Create Account</button>
+          <p><a href="#" id="back-to-login">Back to log-in</a></p>
         </form>
-        <p><a href="#" id="back-to-login">Back to log-in</a></p>
       </div>
     </div>
     <!--           LOGGED OUT SIGN-UP BUTTON       -->
@@ -78,7 +83,7 @@
       <div id="content">
         <div class="home panel active">
           <h2 id="greeting">Home</h2>
-          <p>overview of home panel</p>
+
           <div class="displayed-info">
             <div class="total-units">
               <h2 id="total-count">0</h2>
@@ -93,6 +98,18 @@
             <div class="occupied-units">
               <h2 id="occupied-count">0</h2>
               <p>Occupied</p>
+            </div>
+          </div>
+
+          <p>Contact Us for more info:</p>
+          <div class="home-contacts">
+            <div class="home-socials">
+              <a href="https://www.facebook.com/seandale20/" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.instagram.com/dale_sean20/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -137,5 +154,6 @@
     <script src="auth.js"></script>
     <script src="units.js"></script>
     <script src="moveIn.js"></script>
+    <script src="admin.js"></script>
   </body>
 </html>

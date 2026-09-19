@@ -1,48 +1,123 @@
-function payment(unit, name, phone, email) {
-    unitDetails.innerHTML=`
-        <h3>Unit ${unit.unit_no} - Payment</h3>
-        <p>Move-in fee for <strong>${name}</strong> </p>
-        <p className="fake amount">₱5,000.00</p>
-        <button id="confirm-payment-btn">Confirm Payment</button>
-        <button id="cancel-payment-btn">Cancel</button>
-    `;
+//units display info if clicked
 
-const canceled = document.getElementById('cancel-payment-btn');
-const paymentConfirmed = document.getElementById('confirm-payment-btn');
+const unitBoxes = document.querySelectorAll('.unit-box');
+const unitDetails = document.getElementById('unit-details');
 
+unitBoxes.forEach(box =>{
+    box.addEventListener('click', async function(){
+        const unitNo = this.dataset.unit;
 
-canceled.addEventListener('click', function(){
-    showUnitDetails(unit);
-}) 
+        const{data: unit, error} = await database
+        .from('units')
+        .select('*, tenants(*)')
+        .eq('unit_no', unitNo)
+        .single();
 
-paymentConfirmed.addEventListener('click', function(){
-unitDetails.innerHTML= `
-
-
-
-
-
-<h2>PAYMENT CONFIRMED</h2>
-
-<button id="backT">Back</button>
+        if(error){
+            console.error("Failed to load the unit:", error.message);
+       return;
+        }
+        showUnitDetails(unit);
+    });
+});
 
 
-`;
+async function showUnitDetails(unit){
+    if(unit.status === 'occupied' && unit.tenants){
+        unitDetails.innerHTML = `
+        <h3>Unit ${unit.unit_no} - Occupied</h3>
+        <p><strong>Name:</strong> ${unit.tenants.name}</p> 
+        <p><strong>Phone: </strong>${unit.tenants.phone || 'N/A'}</p>
+        <p><strong>Email:</strong> ${unit.tenants.email}</p> 
+        `;
+        return;
+    }else{
+        const adminStatus = await isAdmin();
 
-const backToUnitDetails = document.getElementById('backT');
+        if(!adminStatus){
+            unitDetails.innerHTML = `
+            <h3>Unit ${unit.unit_no} - Available</h3>
+            `;
+
+            return;
+        }
+
+
+        unitDetails.innerHTML = `
+        <h3>Unit ${unit.unit_no} - Available </h3>
+        <form id="move-in-form">
+        <input type="text" id="move-in-name" placeholder="Full name" required/>
+        <input type="email" id="move-in-email" placeholder="Email" required />
+        <input type="tel" id="move-in-phone" placeholder="Phone" />
+        <button type="submit">Move In </button>
+        </form>
+        `;
+       
+
+    }
+
+
+
+
+//---------------THE SUBMITTING
+    document.getElementById('move-in-form').addEventListener('submit', async function(event){
+        event.preventDefault();
+
+const name = document.getElementById('move-in-name').value;
+const email = document.getElementById('move-in-email').value;
+const phone = document.getElementById('move-in-phone').value;
+
+const success = await moveInTenant(unit, name, phone, email);
+    
+//if inserting failed
+
+if(!success){
+    unitDetails.innerHTML = `
+    <h2 class="success-error-message">OOPS SOMETHING WENT WRONG</h2>
+    <button id="backT">Back</button>`;
+
+    
+
+
+    const backToUnitDetails = document.getElementById('backT');
 backToUnitDetails.addEventListener('click', async function(){
     showUnitDetails(unit);
 
+});
+       return;
+}
 
+    unitDetails.innerHTML = `
+        <h2 class="success-error-message">Successfully added the new tenant</h2>
+        <button id="backT">Back</button>`;
 
-    
-})
+ const backToUnitDetails = document.getElementById('backT');
+backToUnitDetails.addEventListener('click', async function(){
+    showUnitDetails(unit);
 });
 
+
+
+
+});
+            
+        
+      
 }
 
 
 
+
+
+
+
+
+//start of payment
+
+
+
+
+//inserting the datas inside the database
 async function moveInTenant(unit, name, phone, email) {
 
     const{ data, error} = await database
@@ -51,14 +126,14 @@ async function moveInTenant(unit, name, phone, email) {
         name: name,
         email: email,
         phone: phone,
-        'unit_no.': unit
+        'unit_no.': unit.unit_no
 
     })
     .select()
     .single();
     if(error){
         console.error('There was a problem inserting your data', error.message);
-    return;
+    return false;
     }
 
     const{error:unitError} = await database
@@ -70,16 +145,17 @@ async function moveInTenant(unit, name, phone, email) {
     .eq('id', unit.id);
     if(unitError){
         console.error('Failed to update unit' , unitError.message)
-        return;
+        return false;
     }
-    console.log('move in:' , newTenant);
+    console.log('move in:' , data);
 loadUnits();
+return true;
 }
 
 
 
     
-
+  
 
 
 

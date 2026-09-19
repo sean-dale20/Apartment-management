@@ -53,6 +53,10 @@ body.dark-mode{
 body.dark-mode #side-bar{
     background: #12151b;
 }
+#greeting{
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #night-mode{
    
   
@@ -135,17 +139,37 @@ body.dark-mode #side-bar{
 
 
 /*-------------------------------------------The tenants grid   */
+#content{
+    display: flex;
+    flex-direction: column;
+    max-width: auto;
+   
+    margin: 20px 100px;
+}
 .tenants h2{
    font-family:monospace;
    font-size: 30px;
    padding: 20px;
 }
+#unit-details{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
 #units-grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-    margin-top: 16px;
-    padding-left: 100px;
+   
+    padding: 50px 40px;
+    border: 1px solid black;
+    border-radius: 12px;
+
+    background:rgb(231, 221, 190);
+    box-shadow: 
+    0 33px 3px rgba(0,0,0,0.06), 
+    8px 4px 12px rgba(0,0,0,0.54),
+    0 14px 25px rgba(0,0,0,0.50),
+    0 14px 48px rgba(0,0,0,0.08)
+
 }
 
 .unit-box{
@@ -239,10 +263,16 @@ letter-spacing: 1px;
 /*       The tenants grid   */
 #signup-form{
     display: flex;
+    align-items: center;
     flex-direction: column;
+    border-radius: 10px;
+
+
     gap: 10px;
     width: 500px;
-    padding-left: 70px;
+    padding: 70px;
+
+    border: 1px solid black;
     
 }
 .sign-up.panel{
@@ -304,8 +334,20 @@ margin-left: 10px;
 }
 #auth-screen #back-to-login{
    text-align: center;
+   text-decoration: none;
    margin-top: 10px;
-   margin-left: 80px;
+   color: var(--sidebar-bg);
+   
+}
+#home-sign-up{
+    color: var(--sidebar-bg);
+    font-weight: 400;
+    font-family: inherit;
+    font-size: inherit;
+}
+#auth-screen #back-to-login:hover{
+text-decoration: underline;
+   
 }
 .Log-in {
     background: var(--panel-bg);
@@ -331,6 +373,7 @@ margin-left: 10px;
     outline: none;
     border-color: var(--accent);
    background: #fff;
+  
 }
 #login-form button, #signup-form button{
     width: 100%;
@@ -352,12 +395,7 @@ margin-left: 10px;
     color: #6b7280;
 }
 /*       HOME  */
-#content{
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 20px 100px;
-}
+
 .displayed-info{
     display: flex;
     flex-direction: row;
@@ -392,3 +430,4 @@ margin-left: 10px;
     width: 500px;
      align-items: center;
 }
+
