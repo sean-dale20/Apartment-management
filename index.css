@@ -212,6 +212,18 @@ letter-spacing: 1px;
 }
 /*       the added latest delete nalang if di gumana  */
 
+.units-header-container{
+    border: 1px solid black;
+    width: 150px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
 .unit-box.available{
     background: #22c55e;
     

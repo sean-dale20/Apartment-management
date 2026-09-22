@@ -21,6 +21,9 @@ async function loadUnits() {
     if(box){
         box.classList.remove('available', 'occupied');
         box.classList.add(unit.status);
+        
+            
+        
 
 
         //key icon part

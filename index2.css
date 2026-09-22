@@ -1,3 +1,153 @@
-.home-socials{
-    border: 1px solid;
+.track-units{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 25px;
+    color:#947055 ;
+
 }
+
+
+.click-to{
+    display: block;
+}
+
+
+.home-contacts{
+    border: 1px solid black;
+    display: flex;
+
+    height: 120px;
+    width: 800px;
+    gap: 28px;
+    max-width: 650px;
+    padding: 28px 32px;
+   border-radius: 20px;
+   box-shadow: 0 1px 2px rgba(16,24,32,0.04), 0 12px 32px rgba(16, 24, 32, 0.08) ;
+position: relative;
+overflow: hidden;
+}
+
+
+.home-socials{
+display: flex;
+align-items: center;
+justify-content: center;
+
+    border: 1px solid;
+    font-size: 45px;
+    color: gray;
+
+    width: 200px;
+    gap: 12px;
+
+    flex-shrink: 0;
+    border-right: 1px solid black;
+    padding-right: 28px;
+
+}
+.home-socials a{
+   
+    color: rgb(90, 83, 83);
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+
+    
+    border-radius: 50%;
+   
+}
+.home-socials .fb:hover{
+    color: #1877F2;
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+.home-socials .instagram:hover{
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color:transparent;
+    background-clip:text;
+    cursor: pointer;
+
+    transform: translateY(-7px);
+}
+
+
+
+
+.home-email-number{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+font-family: 'Courier New', Courier, monospace;
+font-size: 25px;
+gap: 8px;
+
+
+}
+.home-email-number p{
+margin: 0;
+
+}
+
+#edit-btn{
+border-radius: 5px;
+cursor: pointer;
+font-size: 15px;
+padding: 10px;
+width: 50px;
+height: 40px;
+
+font-family:'Times New Roman', Times, serif;
+font-weight: 500;
+border: 1px solid rgb(136, 132, 132);
+}
+#delete-btn{
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px;
+    width: 80px;
+
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 500;
+border: 1px solid rgb(136, 132, 132);
+}
+.btn-container{
+    display:flex ;
+    flex-direction: row;
+    gap: 15px;
+
+    
+}
+
+/*   UNITS CONTAINER info  */
+.units-container{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    flex-direction: column;
+   width: 360px;
+
+   background: rgba(255, 255, 255, 0.25);
+   backdrop-filter: blur(20px) saturate(180%);
+   -webkit-backdrop-filter: blur(20px)  saturate(180%);
+   border: 1px solid rgba(66, 63, 63, 0.6);
+   border-radius: 16px;
+   padding: 20px;
+   box-shadow: inset 0 0px 32px rgba(31, 38, 53, 0.12),
+   inset 0 1px 0 rgba(68, 65, 65, 0.5);
+}
+.click-to{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(99, 48, 48);
+    border: 1px solid black;
+
+    width: 380px;
+}
+
+
+
