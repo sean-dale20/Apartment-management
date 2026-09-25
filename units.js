@@ -27,39 +27,7 @@ async function loadUnits() {
 
 
         //key icon part
-        const existingKey = box.querySelector('.key-icon');
-
        
-
-        if(unit.status === 'occupied'){
-            if(!existingKey){
-
-            box.insertAdjacentHTML(
-                'beforeend', '<span class="key-icon">🔑</span>');
-            };
-        }
-    
-        else{
-            if(existingKey)
-             
-                existingKey.remove();
-                }
-
-                 //check status
-                 const checkIcon = box.querySelector('.check-icon');
-                if(unit.status === 'available'){
-                    if(!checkIcon){
-                    box.insertAdjacentHTML(
-                        'beforeend', '<span class="check-icon">✅</span>'
-                    );
-                }
-                }
-                    else{
-                        if(checkIcon)
-
-                            checkIcon.remove();
-
-                }
         
         
         

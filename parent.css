@@ -1,0 +1,16 @@
+.home.panel{
+    margin-left: 50px;
+}
+.second-part{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    
+
+}
+.attention{
+    border: 1px solid black;
+    width: 200px;
+    height: 650px;
+    border-radius: 20px;
+}

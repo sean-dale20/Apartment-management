@@ -7,10 +7,23 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="index2.css" />
+    <link rel="stylesheet" href="parent.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Opens an early connection to Google Fonts' servers so the font loads faster -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Same, but for the server that hosts the actual font files (crossorigin is required for fonts) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loads Bricolage Grotesque: optical sizes 12–96, weights 200–800; display=swap shows fallback text until the font is ready -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Your own stylesheet comes AFTER the font link -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <img
@@ -103,60 +116,76 @@
               <p>Occupied</p>
             </div>
           </div>
-
-          <p>Contact Us for more info:</p>
-          <div class="home-contacts">
-            <div class="home-socials">
-              <a
-                class="fb"
-                ="https://www.facebook.com/seandale20/"
-                target="_blank"
-              >
-                <i class="fa-brands fa-facebook"></i>
-              </a>
-              <a
-                class="instagram"
-                href="https://www.instagram.com/dale_sean20/"
-                target="_blank"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+          <!--          dale residence grid           -->
+          <div class="second-part">
+            <div class="units-grid-container">
+              <h2 class="units-h2">DALE RESIDENCES</h2>
+              <div id="units-grid">
+                <div class="unit-box" data-unit="1">Unit-1</div>
+                <div class="unit-box" data-unit="2">Unit-2</div>
+                <div class="unit-box" data-unit="3">Unit-3</div>
+                <div class="unit-box" data-unit="4">Unit-4</div>
+                <div class="unit-box" data-unit="5">Unit-5</div>
+                <div class="unit-box" data-unit="6">Unit-6</div>
+                <div class="unit-box" data-unit="7">Unit-7</div>
+                <div class="unit-box" data-unit="8">Unit-8</div>
+                <div class="unit-box" data-unit="9">Unit-9</div>
+                <div class="unit-box" data-unit="10">Unit-10</div>
+                <div class="unit-box" data-unit="11">Unit-11</div>
+                <div class="unit-box" data-unit="12">Unit-12</div>
+                <div class="unit-box" data-unit="13">Unit-13</div>
+                <div class="unit-box" data-unit="14">Unit-14</div>
+                <div class="unit-box" data-unit="15">Unit-15</div>
+              </div>
+              <div class="color-chart">
+                <div class="color-green">
+                  <p>Available</p>
+                </div>
+                <div class="color-red">
+                  <p>Occupied</p>
+                </div>
+              </div>
             </div>
-            <div class="home-email-number">
-              <p>09950987050</p>
-              <p>diamzondale20@gmail.com</p>
-            </div>
+            <div class="attention"></div>
           </div>
+          <!--          dale residence grid  END         -->
+          <div id="unit-details"></div>
+        </div>
+
+        <div class="home-contacts">
+          <div class="home-socials">
+            <a
+              class="fb"
+              ="https://www.facebook.com/seandale20/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              class="instagram"
+              href="https://www.instagram.com/dale_sean20/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+          <div class="home-email-number">
+            <p>09950987050</p>
+            <p>diamzondale20@gmail.com</p>
+          </div>
+        </div>
+        <div>
+          <div class="units-header-container">
+            <h2>Units</h2>
+          </div>
+          <p class="click-to">Click a Unit to see the units info</p>
         </div>
         <!--           lOG IN           -->
 
         <!------------------------          TENANTS    ------------------------->
 
         <!--           TENANTS PANEL          -->
-        <div class="tenants panel">
-          <div class="units-header-container">
-            <h2>Units</h2>
-          </div>
-          <p class="click-to">Click a Unit to see the units info</p>
-          <div id="units-grid">
-            <div class="unit-box" data-unit="1">Unit-1</div>
-            <div class="unit-box" data-unit="2">Unit-2</div>
-            <div class="unit-box" data-unit="3">Unit-3</div>
-            <div class="unit-box" data-unit="4">Unit-4</div>
-            <div class="unit-box" data-unit="5">Unit-5</div>
-            <div class="unit-box" data-unit="6">Unit-6</div>
-            <div class="unit-box" data-unit="7">Unit-7</div>
-            <div class="unit-box" data-unit="8">Unit-8</div>
-            <div class="unit-box" data-unit="9">Unit-9</div>
-            <div class="unit-box" data-unit="10">Unit-10</div>
-            <div class="unit-box" data-unit="11">Unit-11</div>
-            <div class="unit-box" data-unit="12">Unit-12</div>
-            <div class="unit-box" data-unit="13">Unit-13</div>
-            <div class="unit-box" data-unit="14">Unit-14</div>
-            <div class="unit-box" data-unit="15">Unit-15</div>
-          </div>
-          <div id="unit-details"></div>
-        </div>
+        <div class="tenants panel"></div>
 
         <!--          SETTINGS         -->
         <div class="settings panel">

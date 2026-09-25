@@ -1,6 +1,6 @@
 /*  The color panel */
 :root{
-    --bg: #d8e0d2;
+    --bg: rgb(232, 237, 228);
     --sidebar-bg: #151b22;
     --sidebar-text: #cbcec2;
     --sidebar-active: #334155;
@@ -138,13 +138,19 @@ body.dark-mode #side-bar{
 /*       The contents   */
 
 
-/*-------------------------------------------The tenants grid   */
+/*-------------------------------------------The units grid   */
 #content{
     display: flex;
     flex-direction: column;
-    max-width: auto;
+    max-width: 1200px;
    
     margin: 20px 100px;
+
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+
+ 
 }
 .tenants h2{
    font-family:monospace;
@@ -158,29 +164,41 @@ body.dark-mode #side-bar{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
-   
-    padding: 50px 40px;
-    border: 1px solid black;
-    border-radius: 12px;
 
-    background:rgb(231, 221, 190);
-    box-shadow: 
-    0 33px 3px rgba(0,0,0,0.06), 
-    8px 4px 12px rgba(0,0,0,0.54),
-    0 14px 25px rgba(0,0,0,0.50),
-    0 14px 48px rgba(0,0,0,0.08)
+    width: fit-content;
+   
+    margin: 10px 30px;
+    
+    border-radius: 12px;
+    align-items: center;
+
+  
 
 }
 
 .unit-box{
+  
     position: relative;
     background: var(--sidebar-active);
-    padding: 86px;
+  
     border-radius: 10px;
     text-align: center;
     font-weight: bold;
+
+    
+    justify-content: center;
     cursor: pointer;
     transition: transform 0.15s ease;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+       justify-content: center;
+
+       min-height: 150px;
+       min-width: 150px;
+   
+
    
 }
 /*       the added latest delete nalang if di gumana  */
@@ -248,7 +266,7 @@ letter-spacing: 1px;
 }
 /*-------------------------------------The tenants info when clicked   */
 #unit-details{
-    margin-top: 20px;
+    margin-top: 20px ;
     padding: 16px;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -415,6 +433,7 @@ text-decoration: underline;
     border: 2px solid black;
     padding: 10px;
     gap: 10px;
+    background-color: #f0f1ed;
 }
 
 
