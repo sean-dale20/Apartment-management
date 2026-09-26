@@ -1,5 +1,16 @@
+:root{
+    --bg: rgb(253, 253, 251);
+    --sidebar-bg: #151b22;
+    --sidebar-text: #cbcec2;
+    --sidebar-active: #334155;
+    --accent: #dfe9aa;
+    --panel-bg: #ffffff;
+    --border: #dde2e5;
+    --box-bg:#f3f5f4;
+
+}
 .track-units{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-family: "Bricolage Grotesque", sans-serif;
     font-weight: 700;
     font-size: 25px;
     color:#050505 ;
@@ -132,10 +143,10 @@ border: 1px solid rgb(136, 132, 132);
     font-family: "Bricolage Grotesque", sans-serif;
     font-weight: 500;
    
-    border: 1px solid black;
+    border: 1px solid var(--border);
     border-radius: 15px;
 
-      background:rgb(230, 227, 221);
+      background:var(--box-bg);
     box-shadow: 
     0 33px 3px rgba(0,0,0,0.06), 
     8px 4px 12px rgba(0,0,0,0.54),

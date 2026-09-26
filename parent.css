@@ -1,3 +1,17 @@
+/*  The color panel */
+:root{
+    --bg: rgb(232, 237, 228);
+    --sidebar-bg: #151b22;
+    --sidebar-text: #cbcec2;
+    --sidebar-active: #334155;
+    --accent: #dfe9aa;
+    --panel-bg: #ffffff;
+    --border: #dde2e5;
+    --box-bg:#f3f5f4;
+     --ink:#1f2a44;
+
+
+}
 .home.panel{
     margin-left: 50px;
 }
@@ -14,3 +28,84 @@
     height: 650px;
     border-radius: 20px;
 }
+
+
+
+
+
+/*----------------THE TABLE-----------------------*/
+.units-table-container{
+    display: flex;
+    margin-left: 50px;
+    background-color: var(--box-bg);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 20px;
+
+    border: 1px solid var(--border);
+}
+
+.units-table{
+    width: 100%;
+    border-collapse:collapse ;
+    font-family: "Bricolage Grostesque", sans-serif;
+    font-size: 14px;
+   
+    text-align: left;
+      color: var(--ink);
+}
+.units-table th{
+    font-size: 13px;
+    font-weight: 700;
+    color: #6b7280;
+    padding: 14px 12px;
+    border-bottom: 1px var(--border);
+}
+.units-table td{
+    text-align: left;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+    
+}
+
+
+.units-table tr:hover{
+    background: #f9fafb;
+}
+.units-table td:first-child{
+    font-weight: 700;
+}
+/*----------------THE TABLE-----------------------*/
+.tenants-table-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    background: var(--box-bg);
+    margin-left: 100px;
+    padding: 20px;
+
+    
+ 
+}
+.tenants-table{
+    color: var(--ink);
+    text-align: center;
+
+}
+.tenants-table th{
+  
+   
+    padding: 20px;
+     border-bottom: var(--border);
+
+}
+.tenants-table td{
+    padding: 2px 5px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+   
+}
+

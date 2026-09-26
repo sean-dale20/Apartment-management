@@ -104,7 +104,7 @@ backgroundImage.style.display = 'none';
         
 //  for greeting example if logged in hello dale
         const greet = document.getElementById("greeting");
-        greet.textContent = "Hello," + name;
+        greet.textContent = "Hello, " + name;
 
 
     }else {

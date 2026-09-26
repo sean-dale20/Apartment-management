@@ -78,7 +78,8 @@
       <div id="side-bar">
         <h1>Key holder</h1>
         <button class="nav-item active" data-target="home">Home</button>
-        <button class="nav-item" data-target="tenants">Tenants</button>
+        <button class="nav-item" data-target="Units">Units</button>
+        <button class="nav-item" data-target="Tenants">Tenants</button>
 
         <p id="night-mode-text">Night mode</p>
         <button id="night-mode" aria-label="Toggle night mode">
@@ -186,12 +187,55 @@
         <!------------------------          TENANTS    ------------------------->
 
         <!--           TENANTS PANEL          -->
-        <div class="tenants panel"></div>
+        <div class="Units panel">
+          <div class="units-page-header">
+            <div>
+              <h2 class="unts-page-title">Units</h2>
+              <p class="units-page-subtitle">
+                All 15 units with their rent and current status.
+              </p>
+            </div>
+            <button class="add-unit-btn">Add unit</button>
+          </div>
+          <!--           TABLE HOLDER          -->
+          <div class="units-table-container">
+            <table class="units-table">
+              <thead>
+                <tr>
+                  <th>Unit</th>
+                  <th>Type</th>
+                  <th>Tenant</th>
+                  <th>Monthly</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody class="units-table-body"></tbody>
+            </table>
+          </div>
+        </div>
 
         <!--          SETTINGS         -->
-        <div class="settings panel">
+        <!------------------------          Units    ------------------------->
+
+        <div class="Tenants panel">
           <h2>Settings</h2>
           <p>App settings here</p>
+        </div>
+        <div class="tenants-table-container">
+          <table class="tenants-table">
+            <thead>
+              <tr>
+                <th>Tenant</th>
+                <th>Email</th>
+                <th>Unit</th>
+                <th>Phone</th>
+                <th>Moved in</th>
+              </tr>
+            </thead>
+
+            <tbody id="Tenants-table-data"></tbody>
+          </table>
         </div>
 
         <!--           SIGN UP          -->
