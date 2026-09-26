@@ -7,6 +7,7 @@
     --accent: #dfe9aa;
     --panel-bg: #ffffff;
     --border: #e5e7eb;
+    --box-bg:rgb(230, 227, 221);
 
 }
 
@@ -210,6 +211,9 @@ body.dark-mode #side-bar{
     border-radius: 50%;
     background: var(--bg);
     margin: 0 auto 12px;
+
+    align-items: center;
+    background-color: #cfc1c1;
 }
 .unit-box:hover{
     transform: scale(1.1);
@@ -230,6 +234,10 @@ letter-spacing: 1px;
 }
 /*       the added latest delete nalang if di gumana  */
 
+
+
+/* ---------the code that changes box color if occupied */
+
 .units-header-container{
     border: 1px solid black;
     width: 150px;
@@ -240,14 +248,42 @@ letter-spacing: 1px;
     align-items: center;
     border-radius: 10px;
     margin-bottom: 10px;
+    background: #2f7d6d;
+}
+.unit-box{
+    display: flex;
+font-family: "Bricolage Grotesque", sans-serif;
+font-weight: 700;
+align-items: flex-start;
+justify-content: flex-start;
+padding: 10px 12px;
+
+ min-height: 150px;            
+    min-width: 160px;
+
 }
 
+
 .unit-box.available{
-    background: #22c55e;
-    
+    background: #e1f0ea;          /* soft mint green */
+    border: 1px solid #b3dcc9;    /* slightly darker green border */
+    color: #2f7d6d;               /* dark green text (same as yours) */
 }
+.unit-box.available:hover{
+           
+    border: 3px solid #428f6b;    /* slightly darker green border */
+                
+}
+
 .unit-box.occupied{
-    background: #ef4444;
+    background: #f8e1e1;          /* soft pink-red */
+    border: 1px solid #e8b4b4;    /* slightly darker red border */
+    color: #b93131;               /* dark red text (same as yours) */
+}
+.unit-box.occupied:hover{
+           
+    border: 3px solid #b43d3d;    
+             
 }
 .key-icon{
     position: absolute;
