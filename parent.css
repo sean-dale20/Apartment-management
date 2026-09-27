@@ -35,6 +35,7 @@
 
 /*----------------THE TABLE-----------------------*/
 .units-table-container{
+
     display: flex;
     margin-left: 50px;
     background-color: var(--box-bg);
@@ -50,6 +51,9 @@
     border-collapse:collapse ;
     font-family: "Bricolage Grostesque", sans-serif;
     font-size: 14px;
+
+     width: 1000px;
+    height: 800px;
    
     text-align: left;
       color: var(--ink);
@@ -76,6 +80,25 @@
 .units-table td:first-child{
     font-weight: 700;
 }
+/*STATUS-PILL*/
+.status-pill{
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.status-pill.occupied{
+    background: #d7f3e3;
+    color: #1e7a4c;
+}
+.status-pill.available{
+    background: #fde7c7;
+    color: #b5730a;
+}
+
+
+
 /*----------------THE TABLE-----------------------*/
 .tenants-table-container{
     display: flex;
@@ -93,6 +116,8 @@
 .tenants-table{
     color: var(--ink);
     text-align: center;
+    width: 1000px;
+    height: 800px;
 
 }
 .tenants-table th{

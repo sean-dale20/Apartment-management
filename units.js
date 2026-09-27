@@ -116,7 +116,7 @@ loadUnits();
 
 data.forEach(unit => {
 
-    const tenantName = unit.tenants ? unit.tenants.name : "-";
+    const tenantName = unit.tenants ? unit.tenants.name  : "-";
 
    
 
@@ -129,7 +129,7 @@ data.forEach(unit => {
     <td>${unit.unit_type}</td>
     <td>${tenantName}</td>
     <td>${unit.monthly_rent}</td>
-    <td>${status}</td>
+    <td><span class="status-pill ${status}"> ${status} </span></td>
     </tr>
     
     `
