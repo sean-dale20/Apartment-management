@@ -118,13 +118,20 @@ font-size: 32px;
     padding: 12px 20px;
     font-size: 14px;
     cursor: pointer;
-    transition: background 0.15s ease;
+      margin: 4px 12px;
+
+
+     width: calc(100% - 24px);
+    transition: background .5s ease;
 }
 
 .nav-item.active{
     background: var(--sidebar-active);
     color: rgb(238, 234, 234);
     border-left: 3px solid var(--accent);
+   
+  
+    border-radius: 8px;
 }
 
 
@@ -506,4 +513,5 @@ text-decoration: underline;
     width: 500px;
      align-items: center;
 }
+
 

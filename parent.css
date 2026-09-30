@@ -64,6 +64,7 @@
     color: #6b7280;
     padding: 14px 12px;
     border-bottom: 1px var(--border);
+  
 }
 .units-table td{
     text-align: left;
@@ -133,4 +134,102 @@
     border-bottom: 1px solid var(--border);
    
 }
+.tenants-table tr:hover{
+        background: #f9fafb;
 
+}
+
+
+/*----------------THE PAYMENTS-----------------------*/
+.payments.active{
+    display: flex;
+    flex-direction: column;
+   margin-left: 70px;
+    margin-top: 70px;
+
+
+   
+
+     
+}
+.payment-inputs-container{
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+.payment-inputs-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+.payments-submit-btn{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+.payments-submit-btn-container{
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    margin: 45px 165px;
+}
+/*THE TABLE*/
+.payments-table-container{
+width: 700px;
+    height: auto;
+border: 1px solid var(--sidebar-active);
+
+}
+.payments-table-container th{
+    border: 1px solid var(--sidebar-active);
+
+}
+.payments-table-container thead{
+  
+
+}
+.payments-table-container td{
+  text-align: center;
+  border-bottom:1px solid var(--border) ;
+}
+
+/*----------------------------THE BALANCE SHEEET---------------*/
+.table-container{
+   
+
+}
+.balance-table-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Bricolage Grostesque", sans-serif;
+  
+
+    width: 400px;
+    height: auto;
+    padding: 5px;
+
+    background-color: var(--box-bg);
+
+}
+
+.balance-table-container th{
+    border: 1px solid var(--border);
+    padding: 10px;
+    width: 100px;
+    border-bottom:1px solid var(--ink);
+
+
+}
+.balance-table-container td{
+    text-align: center;
+    width: 100px;
+    border-bottom:1px solid var(--ink);
+
+}
