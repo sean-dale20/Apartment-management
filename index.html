@@ -64,6 +64,7 @@
           <input type="text" id="signup-name" placeholder="Name" />
           <input type="phone" id="signup-phone" placeholder="Phone" />
           <button type="submit" id="signup-btn">Create Account</button>
+
           <p><a href="#" id="back-to-login">Back to log-in</a></p>
         </form>
       </div>
@@ -81,7 +82,7 @@
         <button class="nav-item" data-target="Units">Units</button>
         <button class="nav-item" data-target="Tenants">Tenants</button>
         <button class="nav-item" data-target="payments">Payments</button>
-
+        <button class="nav-item" data-target="issues">Issues</button>
         <p id="night-mode-text">Night mode</p>
         <button id="night-mode" aria-label="Toggle night mode">
           <span class="toggle-track">
@@ -148,7 +149,13 @@
                 </div>
               </div>
             </div>
-            <div class="attention"></div>
+            <div id="home-issues-container">
+              <h3 class="home-issues"></h3>
+              <div>
+                <p class="details"></p>
+                <p class="created_at"></p>
+              </div>
+            </div>
 
             <!--          dale residence grid  END         -->
           </div>
@@ -240,6 +247,7 @@
           </div>
         </div>
         <!--           SIGN UP          -->
+        <!----------------------------------- PAYMENTS TAB ------------------        -->
         <div class="payments panel">
           <div class="payments-input-container">
             <h3>Record a payment-</h3>
@@ -302,8 +310,8 @@
           <table class="payments-table-container" id="payments-table-container">
             <thead>
               <tr>
-                <th>Tenant</th>
                 <th>Unit</th>
+                <th>Tenant</th>
                 <th>Due date</th>
                 <th>Method</th>
                 <th>Amount</th>
@@ -313,10 +321,23 @@
             <tbody id="tbody"></tbody>
           </table>
         </div>
-
-        <!--           SIGN UP          -->
+        <div class="issues panel">
+          <div class="issues-content">
+            <h2>Maintenance</h2>
+            <p>Repair reuests from tenants and inspections</p>
+            <div class="issues-cards">
+              <div class="issues-btn">
+                <div id="report-form">
+                  <button id="report-button">report an issue</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!--           JS FILES         -->
     <script src="index.js"></script>
     <script src="nav.js"></script>
     <script src="auth.js"></script>
@@ -324,6 +345,7 @@
     <script src="moveIn.js"></script>
     <script src="admin.js"></script>
     <script src="paymentsMaintenance.js"></script>
+    <script src="issues.js"></script>
 
     <script src="balance.js"></script>
   </body>

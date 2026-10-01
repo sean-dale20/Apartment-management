@@ -125,10 +125,10 @@ data.forEach(unit => {
 
     const row = `
     <tr>
-    <td>${unit.unit_no}</td>
+    <td class="table-num">${unit.unit_no}</td>
     <td>${unit.unit_type}</td>
     <td>${tenantName}</td>
-    <td>${unit.monthly_rent}</td>
+    <td class="table-num" >${unit.monthly_rent}</td>
     <td><span class="status-pill ${status}"> ${status} </span></td>
     </tr>
     
@@ -165,12 +165,12 @@ data.forEach(unit => {
 
 const row = `
 <tr>
-<td>${inside.unit_no}</td>
+<td class="table-num">${inside.unit_no}</td>
 <td>${tenantsName}</td>
 <td>${tenantsEmail}</td>
 
-<td>${tenantsPhone}</td>
-<td>${tenantsCreated}</td>
+<td class="table-num">${tenantsPhone}</td>
+<td class="table-num">${tenantsCreated}</td>
 </tr>
 
 `

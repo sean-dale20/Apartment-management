@@ -22,7 +22,7 @@
     
 
 }
-.attention{
+#home-issues-container{
     border: 1px solid black;
     width: 200px;
     height: 650px;
@@ -104,39 +104,59 @@
 .tenants-table-container{
     display: flex;
     flex-direction: column;
+
+    max-width: 1000px;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--border);
     background: var(--box-bg);
     margin-left: 100px;
     padding: 20px;
+    border-radius: 12px;
+
+    
 
     
  
 }
 .tenants-table{
+    width: 100%;
     color: var(--ink);
     text-align: center;
     width: 1000px;
+    font-family: "Bricolage Grotsque", sans serif;
+    font-size: 15px;
+    color: var(--ink);
     height: 800px;
+
+    
 
 }
 .tenants-table th{
   
-   
-    padding: 20px;
-     border-bottom: var(--border);
+   font-size: 13px;
+   color: #6b7280;
+    padding: 0 12px 14px;
+     border-bottom: 2px solid var(--border);
 
 }
 .tenants-table td{
-    padding: 2px 5px;
+    
+    padding: 18px 12px;
     align-items: center;
     border-bottom: 1px solid var(--border);
+    font-weight: 500;
+    vertical-align: middle;
    
 }
 .tenants-table tr:hover{
         background: #f9fafb;
 
+}
+.tenants-table .table-num{
+    font-family: inherit;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
 }
 
 
@@ -155,6 +175,7 @@
 .payment-inputs-container{
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
     
    
 }
@@ -162,10 +183,18 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
+    font-weight: 600;
 }
 .payments-submit-btn{
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+
+    border-radius: 5px;
+    padding: 7px 12px;
+    background-color: transparent;
+
+    color: rgb(209, 132, 56);
     
 
 }
@@ -181,6 +210,15 @@
 }
 /*THE TABLE*/
 .payments-table-container{
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--panel-bg);
+    padding: 12px 20px;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    text-align: left;
 width: 700px;
     height: auto;
 border: 1px solid var(--sidebar-active);
@@ -188,6 +226,10 @@ border: 1px solid var(--sidebar-active);
 }
 .payments-table-container th{
     border: 1px solid var(--sidebar-active);
+    font-weight: 600;
+    color: #6b7280;
+    padding: 8px 12px 14px;
+    border-bottom: 2px solid var(--border);
 
 }
 .payments-table-container thead{
@@ -198,24 +240,32 @@ border: 1px solid var(--sidebar-active);
   text-align: center;
   border-bottom:1px solid var(--border) ;
 }
+.tenants-table tbody tr:last-child td{
+    border-bottom: none; 
+}
 
+.payments-table-container tbody tr:hover{
+    background: #f9fafb;
+}
 /*----------------------------THE BALANCE SHEEET---------------*/
 .table-container{
    
 
 }
 .balance-table-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-family: "Bricolage Grostesque", sans-serif;
-  
+     border-collapse: separate;
+    border-spacing: 0;
+    background: var(--panel-bg);
+    padding: 12px 20px;
 
-    width: 400px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    text-align: left;
+width: 700px;
     height: auto;
-    padding: 5px;
+border: 1px solid var(--sidebar-active);
 
-    background-color: var(--box-bg);
 
 }
 
@@ -233,3 +283,105 @@ border: 1px solid var(--sidebar-active);
     border-bottom:1px solid var(--ink);
 
 }
+.balance-table-container tbody tr:hover{
+   background: #f9fafb;
+}
+.table-num{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+
+
+/*----------------------------THE BALANCE SHEEET---------------*/
+.issues-form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 20px;
+
+  margin: 20px 20px 40px 20px;
+   
+    padding: 10px 24px;
+    background-color: var(--sidebar-bg);
+    border: 2px solid var(--border);
+
+  
+
+    border-radius: 12px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--ink);
+}
+.issues-form-submit{
+  
+    border-radius: 7px;
+    background-color: transparent;
+
+    color: rgb(218, 188, 57);
+
+}
+
+.issues-form-title{
+    width: 450px;
+   border-radius: 3px;
+    background: #fafaf9;
+     font-family: inherit;
+     border: 1px solid var(--border);
+     
+     
+
+}
+.issues-form-details{
+     width: 100%;
+     height: 250px;
+ background: #fafaf9;
+  font-family: inherit;
+   font-size: 14px;
+   color: var(--ink);
+border: 1px solid var(--border);
+ border-radius: 3px;
+}
+.issues-form-date{
+     width: 100%;
+      background: #fafaf9;
+       font-family: inherit;
+        font-size: 14px;
+        color: var(--ink);
+border: 1px solid var(--border);
+ border-radius: 3px;
+
+ margin-bottom: 20px;
+}
+.issues-form-title:focus,
+.issues-form-date:focus,
+.issues-form-details:focus{
+    outline: none;                                   /* removes the browser's default blue outline */
+    border-color: rgb(218, 188, 57);                 /* your gold */
+    box-shadow: 0 0 0 3px rgba(218, 188, 57, 0.25);  /* soft gold ring around the box */
+    background: #fff;
+}
+.issues-submit-button-container{
+    display: flex;
+  margin-top: 20px;
+    justify-content: center;
+   
+}
+.issues-submit-button-container button{
+   
+
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--ink);
+
+     font-size: 14px;
+     font-weight: 500;
+      font-family: "Bricolage Grotesque", sans-serif;
+      border: 1px solid var(--border);
+}
+.issues-submit-button-container button:hover{
+    background-color: rgb(19, 18, 18);
+    color: #ffffff;
+ 
+}
+

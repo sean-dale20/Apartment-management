@@ -27,12 +27,13 @@ data.forEach(async yeah =>{
 
     const tableData = `
     <tr>
+    <td class"table-num"> ${yeah.tenants['unit_no.']}</td>
     <td> ${yeah.tenants.name}</td>
-    <td> ${yeah.tenants['unit_no.']}</td>
-    <td> ${yeah.due_date}</td>
+    
+    <td class"table-num"> ${yeah.due_date}</td>
     <td> ${yeah.method}</td>
-    <td> ${yeah.amount}</td>
-    <td> ${balance}</td>
+    <td class"table-num"> ${yeah.amount}</td>
+    <td class"table-num"> ${balance}</td>
 </tr>
     
     `;
@@ -89,19 +90,28 @@ if (datePaid) {                                        // only calculate when a 
     due = dueDate.toISOString().split('T')[0];         // back to 'YYYY-MM-DD' for Supabase
 }
        const rent = await getRent(tenantName);
-if(rent === null) return;
+if(rent === null) return false;
 
  
 const result = await paymentsInsert(amount, due, method, datePaid, tenantName );
-if (result === null) return;
+if (result === null) return false;
 
 await updateBalance(tenantName);
+
+paymentsTable();
+return true;
 }
-
-
-document.getElementById('payment-form').addEventListener('submit', async function(event){
+const paymentF = document.getElementById('payment-form');
+paymentF.addEventListener('submit', async function(event){
 event.preventDefault();
 await paymentSubmit(event);
+
+paymentF.innerHTML=`
+
+<h2 class="recordSuccesful">Recording payment Succesfull</h2>
+
+`
+
 
 
 
