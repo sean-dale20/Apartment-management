@@ -88,13 +88,18 @@ font-size: 32px;
 /*       menu    */
 
 #side-bar{
+    display: flex;
     width: 290px;
     background: var(--sidebar-bg);
     color: var(--sidebar-text);
     padding: 20px 0;
     flex-shrink: 0;
     flex-direction: column;
-    position: relative;
+    position: sticky;
+
+    align-self: flex-start;
+    height: 100vh;
+    top: 0;
 }
 
 
@@ -155,7 +160,7 @@ font-size: 32px;
 #content{
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: 1400px;
    
     margin: 20px 100px;
 
