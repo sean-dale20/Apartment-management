@@ -124,7 +124,10 @@ cards.innerHTML += `
                 <p class="issue-cards-title" id="issue-cards-title">${yuppers.title}</p>
                 <p class="issue-cards-details" id="issue-cards-details">${yuppers.details}</p>
                 <p class="issue-cards-time" id="issue-cards-time">${new Date(yuppers.created_at).toLocaleDateString()}</p>
+
+                <button id="resolved-btn" data-id="${yuppers.id}">Resolved</button>
               </div>
+
 
 
 `
@@ -139,9 +142,42 @@ cardshome.innerHTML += `
 `
 
     })
+        document.querySelectorAll('#resolved-btn').forEach(btn =>{
+btn.addEventListener('click', function (){
+
+
+    const sure = confirm('Are you sure this issue is resolved already?');
+    if (!sure) return;
+
+        const issuedId = btn.dataset.id;
+        resolvedIssue(issuedId)
+
+
+
+
+    });
+})
+
 
 }
 loadIssues();
+
+
+async function resolvedIssue(issueId) { 
+    const { data, error} = await database
+    .from('issues')
+     .delete()
+    .eq('id', issueId )
+
+    if(error){
+        console.error("failed deleting issue card", error.message);
+        return;
+    }
+    loadIssues();
+
+}
+
+
 
 
 

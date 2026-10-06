@@ -101,6 +101,18 @@
 
 
 /*----------------THE TABLE-----------------------*/
+.unts-page-title{
+font-family:"Bricolage Grotesque", sans-serif; 
+}
+.units-page-subtitle{
+      font-family:"Bricolage Grotesque", sans-serif; 
+      letter-spacing: -0.5px;
+      font-weight: 600;
+
+}
+.Tenants h2{
+     font-family:"Bricolage Grotesque", sans-serif; ;
+}
 .tenants-table-container{
     display: flex;
     flex-direction: column;
@@ -446,6 +458,9 @@ margin-bottom: 17px;
 }
 /*----------------------------ISSUES-CARDS-----------------------------*/
 /*PARENT*/
+.issues-content{
+     font-family:"Bricolage Grotesque", sans-serif; ;
+}
 .issues-cards{
     display: grid;
    
@@ -510,6 +525,14 @@ border-top: 1px solid var(--border);
 font-size: 12px;
 color:  #6b7280;
 }
+#resolved-btn{
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    font-family:"Bricolage Grotesque", sans-serif; 
+    cursor: pointer;
+
+    
+}
 /*----------------------------HOME-ISSUES-CARDS-----------------------------*/
 #home-issues-container{
     display: flex;
@@ -565,4 +588,5 @@ transform: translateY(-5px);
     padding: 4px;
  font-size: 12px;
 }
+
 

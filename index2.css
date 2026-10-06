@@ -220,11 +220,13 @@ border: 1px solid rgb(136, 132, 132);
     width: 15px;
     margin-left: 20px;
     margin-top: 0;
+    background-color: #a6d8c1;
 }
 .color-red{
     border: 1px solid black;
     height: 15px;
     width: 15px;
+    background-color: #e8cbb4;
 }
 
 

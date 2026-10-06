@@ -293,13 +293,13 @@ padding: 10px 12px;
 }
 
 .unit-box.occupied{
-    background: #f8e1e1;          /* soft pink-red */
-    border: 1px solid #e8b4b4;    /* slightly darker red border */
-    color: #b93131;               /* dark red text (same as yours) */
+    background: #f8efe1;          /* soft pink-red */
+    border: 1px solid #e8cbb4;    /* slightly darker red border */
+    color: #b98931;               /* dark red text (same as yours) */
 }
 .unit-box.occupied:hover{
            
-    border: 3px solid #b43d3d;    
+    border: 3px solid #b4733d;    
              
 }
 .key-icon{
@@ -496,7 +496,7 @@ text-decoration: underline;
     display: flex;
     flex-direction: column;
   width: 500px;
-    border: 1px solid var(--ink);
+    border: 2px solid var(--ink);
 
     align-items: center;
 
