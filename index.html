@@ -180,12 +180,6 @@
               <p>diamzondale20@gmail.com</p>
             </div>
           </div>
-          <div>
-            <div class="units-header-container">
-              <h2>Units</h2>
-            </div>
-            <p class="click-to">Click a Unit to see the units info</p>
-          </div>
         </div>
         <!--           lOG IN           -->
 
@@ -200,7 +194,6 @@
                 All 15 units with their rent and current status.
               </p>
             </div>
-            <button class="add-unit-btn">Add unit</button>
           </div>
           <!--           TABLE HOLDER          -->
           <div class="units-table-container">
@@ -246,47 +239,50 @@
         <!----------------------------------- PAYMENTS TAB ------------------        -->
         <div class="payments panel">
           <div class="payments-input-container">
-            <h3>Record a payment-</h3>
+            <h3>Record a payment</h3>
 
-            <form id="payment-form" display="block">
-              <div class="payment-inputs-container">
-                <label for="payment-tenant">Tenants</label>
-                <select class="payment-tenant" id="payment-tenant" required>
-                  <option value="">-- Select tenant--</option>
-                </select>
+            <div class="payment-parent">
+              <form id="payment-form" display="block">
+                <div class="payment-inputs-container">
+                  <label for="payment-tenant">Tenants</label>
+                  <select class="payment-tenant" id="payment-tenant" required>
+                    <option value="">-- Select tenant--</option>
+                  </select>
 
-                <label for="payments-method">Payment method</label>
-                <select class="payments-method" id="payments-method" required>
-                  <option value="">-- Not paid yet --</option>
-                  <option value="Cash">Cash</option>
-                  <option value="Gcash">Gcash</option>
-                  <option value="Bank">Bank Transfer</option>
-                </select>
+                  <label for="payments-method">Payment method</label>
+                  <select class="payments-method" id="payments-method" required>
+                    <option value="">-- Not paid yet --</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Gcash">Gcash</option>
+                    <option value="Bank">Bank Transfer</option>
+                  </select>
 
-                <label for="payment-amount">Amount</label>
-                <input
-                  type="number"
-                  class="payment-amount"
-                  id="payment-amount"
-                  required
-                />
+                  <label for="payment-amount">Amount</label>
+                  <input
+                    type="number"
+                    class="payment-amount"
+                    id="payment-amount"
+                    required
+                  />
 
-                <label for="payments-date-paid">Date-paid</label>
-                <input
-                  type="date"
-                  class="payments-date-paid"
-                  id="payments-date-paid"
-                  required
-                />
-              </div>
-              <div class="payments-submit-btn-container">
-                <button class="payments-submit-btn" type="submit">
-                  Save payment
-                </button>
-              </div>
-            </form>
+                  <label for="payments-date-paid">Date-paid</label>
+                  <input
+                    type="date"
+                    class="payments-date-paid"
+                    id="payments-date-paid"
+                    required
+                  />
+                </div>
+                <div class="payments-submit-btn-container">
+                  <button class="payments-submit-btn" type="submit">
+                    Save payment
+                  </button>
+                </div>
+
+                <hr />
+              </form>
+            </div>
           </div>
-
           <h2>Balance sheet</h2>
           <div class="table-container" id="table-container">
             <table class="balance-table-container">

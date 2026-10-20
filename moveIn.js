@@ -9,8 +9,9 @@ unitBoxes.forEach(box =>{
 
 
        const clickedUnit = document.querySelector('.click-to');
+       if(clickedUnit) {
       clickedUnit.style.display = "none";
-
+       }
         const{data: unit, error} = await database
         .from('units')
         .select('*, tenants(*)')
@@ -49,8 +50,16 @@ const adminStatus = await isAdmin();
 
 });
 
-                document.getElementById('delete-btn').addEventListener('click', function(){
+                document.getElementById('delete-btn').addEventListener('click', async function(){
                     deleteTenant(unit.tenants);
+
+                    if(success){
+                        unitDetails.innerHTML = `<h2>Teanant removed </h2>`;
+                        
+                    }
+                    else{
+                        unitDetails.innerHTML = `<h2> OOPS SOMETHING WENT WRONG</h2>`
+                    }
                 })
             
         }
@@ -281,12 +290,25 @@ document.getElementById('backToUnits').addEventListener('click', function(){
 //delete button
 
 async function deleteTenant(tenant) {
+    const{error:unitError} = await database
+.from('units')
+.update({
+    status: 'available',
+    tenant_id: null
+})
+.eq('tenant_id', tenant.id);
+
+if(unitError){
+    console.error('failed freeing the unit', unitError.message);
+    return false;
+}
+
 
     const{ data, error} = await database
 
     .from('tenants')
     .delete()
-    .eq('id', tenant)
+    .eq('id', tenant.id)
 
 
 if(error){
@@ -294,6 +316,11 @@ if(error){
 
 return false;
 }
+
+
+
+
+
 loadUnits();
 return true;
     

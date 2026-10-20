@@ -255,18 +255,7 @@ letter-spacing: 1px;
 
 /* ---------the code that changes box color if occupied */
 
-.units-header-container{
-    border: 1px solid black;
-    width: 150px;
-    height: 120px;
-    display: flex;
-    flex-direction: column;
 
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    background: #2f7d6d;
-}
 .unit-box{
     display: flex;
 font-family: "Bricolage Grotesque", sans-serif;

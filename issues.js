@@ -125,7 +125,7 @@ cards.innerHTML += `
                 <p class="issue-cards-details" id="issue-cards-details">${yuppers.details}</p>
                 <p class="issue-cards-time" id="issue-cards-time">${new Date(yuppers.created_at).toLocaleDateString()}</p>
 
-                <button id="resolved-btn" data-id="${yuppers.id}">Resolved</button>
+                <button id="resolved-btn" data-id="${yuppers.id}">Resolve</button>
               </div>
 
 

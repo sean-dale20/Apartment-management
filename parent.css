@@ -120,16 +120,13 @@ font-family:"Bricolage Grotesque", sans-serif;
     max-width: 1000px;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border);
+    border: 1px solid #e2e5e1;
     background: var(--box-bg);
     margin-left: 100px;
     padding: 20px;
     border-radius: 5px;
-
-    border-top: 10px solid #b5730a;
-     border-right: 1px solid #b5730a;
-      border-bottom: 1px solid #b5730a;
-       border-left: 1px solid #b5730a;
+overflow-x: auto;
+   
 
     box-shadow: 0 14px 4px rgba(21, 27, 34, 0.06),
                 15px 12px 28px rgba(21, 27, 34, 0.12);
@@ -140,46 +137,59 @@ font-family:"Bricolage Grotesque", sans-serif;
 }
 .tenants-table{
     width: 100%;
+    border-collapse: collapse;
     color: var(--ink);
     text-align: center;
-    width: 1000px;
-    font-family: "Bricolage Grotsque", sans serif;
+   
+    font-family: "Bricolage Grotesque", sans serif;
     font-size: 15px;
     color: var(--ink);
-    height: 800px;
+  
 
     
 
-    padding: 20px;
+  
 
     
 
 }
 .tenants-table th{
-  
+  background: #f8f8f5;
    font-size: 13px;
-   color: #6b7280;
-    padding: 0 12px 14px;
+   color: #5b6472;
+    padding: 14px 20px;
      border-bottom: 2px solid var(--border);
+
+     text-transform: uppercase;
+padding: 14px 20px;
+     white-space: nowrap;
+     font-weight: 600;
+     letter-spacing: 0.6px;
 
 }
 .tenants-table td{
-    
-    padding: 18px 12px;
-    align-items: center;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border);
-    font-weight: 500;
     vertical-align: middle;
+    font-weight: 400;
+color: var(--ink);
+   white-space: nowrap;
    
 }
 .tenants-table tr:hover{
-        background: #f9fafb;
+        background: #fdf8f0;
 
 }
 .tenants-table .table-num{
     font-family: inherit;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.5px;
+}
+
+.tenants-table .table-num{
+    font-variant-numeric: tabular-nums;
+  
+    letter-spacing: 0;
 }
 
 
@@ -196,18 +206,40 @@ font-family:"Bricolage Grotesque", sans-serif;
      
 }
 .payment-inputs-container{
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-
-  
+ width: 100%;                          
+    padding: 11px 12px;                   
+    font-family: inherit;                 
+    font-size: 15px;
+    color: var(--ink);                   
+    background: #fafaf8;                  
+    border: 1px solid #d5d9d3;           
+    border-radius: 10px;                  
+    min-height: 44px;                     
+    box-sizing: border-box;
     
    
+}
+.payment-inputs-container select:focus,
+.payment-inputs-container input:focus{
+    outline: none;                                   
+    border-color: rgb(218, 188, 57);                 
+    box-shadow: 0 0 0 3px rgba(218, 188, 57, 0.25);  
+    background: #ffffff;
+}
+.payment-inputs-container label{
+    font-size: 14px;
+    font-weight: 600;
+    align-self: center;                   
+}
+.payment-parent{
+    background-color: var(--box-bg);
+    padding: 15px;
+    border-radius: 22px;
 }
 .payment-inputs-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 22px 28px;
     font-weight: 600;
 }
 .payments-submit-btn{
@@ -220,16 +252,24 @@ font-family:"Bricolage Grotesque", sans-serif;
     padding: 7px 12px;
     background-color: rgb(224, 224, 221);
 
-    color: rgb(209, 132, 56);
+    color: rgb(22, 20, 19);
 
      font-family: "Bricolage Grotesque", sans-serif;
     border: 1px solid var(--ink);
     font-weight: 600;
+
+    white-space: nowrap;
     
 
 }
+.payments-submit-btn-container button{
+    display: flex;
+   flex-wrap: nowrap;
+  
+
+}
 .payments-submit-btn:hover{
-   background-color: #2b2f33;
+   background-color: #35332d;
    color: #ffffff;
     
 
@@ -242,7 +282,8 @@ font-family:"Bricolage Grotesque", sans-serif;
 
     justify-content: flex-end;
 
-    margin: 45px 7px 50px 150px;
+    margin: 25px 17px 5px 550px;
+    flex-wrap: nowrap;
 }
 /*THE TABLE*/
 .payments-table-container{
@@ -263,7 +304,7 @@ border: 1px solid var(--sidebar-active);
 .payments-table-container th{
     border: 1px solid var(--sidebar-active);
     font-weight: 600;
-    color: #6b7280;
+    color: #2b2f36;
     padding: 8px 12px 14px;
     border-bottom: 2px solid var(--sidebar-active);
 
