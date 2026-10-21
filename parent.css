@@ -29,11 +29,75 @@
     border-radius: 20px;
 }
 
+/*----------------------------DARK MODE FIXES DAGDAG-----------------------------*/
 
+/* tagline on the dark background */
+body.dark-mode .track-units{
+    color: #cbcec2;                         
+}
+
+/* the big cards: DALE RESIDENCES box and Attention box */
+body.dark-mode .units-grid-container,
+body.dark-mode #home-issues-container{
+    background: #1f2630;                    /* dark slate, a bit lighter than the page */
+    border-color: #2c3744;                  /* subtle border so the card edge still shows */
+    color: #e5e7eb;                         /* light text inside */
+}
+
+/* titles inside those cards */
+body.dark-mode .units-h2,                   /* DALE RESIDENCES */
+body.dark-mode #home-issues-container h3,   
+body.dark-mode .color-chart p{              
+    color: #e5e7eb;                       
+}
+
+
+body.dark-mode .home-issue-card{
+    background: #263241;                    
+    border-color: #334155;
+}
+
+
+body.dark-mode .home-issue-cards-details,
+body.dark-mode .home-issue-cards-time{
+    color: #aab2bd;
+}
+
+/* the thin line above the date */
+body.dark-mode .home-issue-cards-time{
+    border-top-color: #334155;
+}
 
 
 
 /*----------------THE TABLE-----------------------*/
+/* ---------- dark mode: Units table ---------- */
+
+
+body.dark-mode .units-table-container{
+    background: #1f2630;                  /* same dark slate as the Home cards */
+    border-color: #2c3744;                
+}
+
+
+body.dark-mode .units-table{
+    color: #e5e7eb;                       
+}
+
+/* the header row: Unit, Type, Tenant, Monthly, Status */
+body.dark-mode .units-table th{
+    color: #aab2bd;                       /* muted light gray */
+}
+
+/* the line between rows */
+body.dark-mode .units-table td{
+    border-bottom-color: #2c3744;        
+}
+
+/* row highlight when the mouse is over it */
+body.dark-mode .units-table tr:hover{
+    background: #263241;                  
+}
 .units-table-container{
 
     display: flex;
@@ -100,7 +164,35 @@
 
 
 
-/*----------------THE TABLE-----------------------*/
+/*----------------THE TENANTS TABLE-----------------------*/
+
+
+/*----------------DARK-MODE FOR TENANTS TABLE-----------------------*/
+body.dark-mode .tenants-table-container{
+    background: #1f2630;
+    border-color: #1f2630;
+}
+body.dark-mode .tenants-table,
+body.dark-mode .tenants-table td{
+    color: #e5e7eb;                       /* light text */
+}
+body.dark-mode .tenants-table th{
+    background: #263241;                  
+    color: #aab2bd;                       
+    border-bottom-color: #334155;
+}
+/* the line between rows */
+body.dark-mode .tenants-table td{
+    border-bottom-color: #2c3744;
+}
+
+/* row highlight on hover */
+body.dark-mode .tenants-table tbody tr:hover{
+    background: #263241;                  /* instead of the cream color */
+}
+
+/*----------------DARK-MODE FOR TENANTS TABLE END-----------------------*/
+
 .unts-page-title{
 font-family:"Bricolage Grotesque", sans-serif; 
 }
@@ -135,6 +227,11 @@ overflow-x: auto;
     
  
 }
+
+
+
+
+
 .tenants-table{
     width: 100%;
     border-collapse: collapse;
@@ -193,7 +290,66 @@ color: var(--ink);
 }
 
 
-/*----------------THE PAYMENTS-----------------------*/
+/*----------------THE PAYMENTS Table-----------------------*/
+/*----------------DARK-MODE FOR PAYMENTS TABLE-----------------------*/
+/* ---------- dark mode: Payments ---------- */
+
+/* the "Record a payment" card */
+body.dark-mode .payment-parent{
+    background: #1f2630;                  /* dark slate card */
+    border-color: #2c3744;
+    color: #e5e7eb;                       /* light text, incl. the "Recording payment" message */
+}
+
+/* labels: Tenants, Payment method, Amount, Date-paid */
+body.dark-mode .payment-inputs-container{
+    color: #e5e7eb;
+}
+
+/* the dropdowns and input boxes */
+body.dark-mode .payment-inputs-container select,
+body.dark-mode .payment-inputs-container input{
+    background: #263241;                  /* dark box */
+    border-color: #334155;
+    color: #e5e7eb;                       /* light typed text */
+    color-scheme: dark;    
+                 /* makes the calendar icon + dropdown list dark too */
+}
+
+/* when you click into a box (keeps your gold ring, just no white flash) */
+body.dark-mode .payment-inputs-container select:focus,
+body.dark-mode .payment-inputs-container input:focus{
+    background: #2c3744;
+}
+
+
+/* both tables: Balance sheet + Transaction History */
+body.dark-mode .balance-table-container,
+body.dark-mode .payments-table-container{
+    background: #1f2630;                  /* dark card instead of white */
+    border-color: #2c3744;
+    color: #e5e7eb;                       /* light text */
+}
+
+/* table headers */
+body.dark-mode .balance-table-container th,
+body.dark-mode .payments-table-container th{
+    color: #aab2bd;                       /* muted light gray */
+    border-color: #334155;
+}
+
+/* lines between rows */
+body.dark-mode .balance-table-container td,
+body.dark-mode .payments-table-container td{
+    border-bottom-color: #2c3744;
+}
+
+/* row highlight on hover */
+body.dark-mode .balance-table-container tbody tr:hover,
+body.dark-mode .payments-table-container tbody tr:hover{
+    background: #263241;                  /* instead of near-white */
+}
+/*----------------DARK-MODE FOR TENANTS TABLE END-----------------------*/
 .payments.active{
     display: flex;
     flex-direction: column;
@@ -205,9 +361,10 @@ color: var(--ink);
 
      
 }
-.payment-inputs-container{
+.payment-inputs-container select,
+.payment-inputs-container input{
  width: 100%;                          
-    padding: 11px 12px;                   
+    padding: 11px 22px;                   
     font-family: inherit;                 
     font-size: 15px;
     color: var(--ink);                   
@@ -241,6 +398,7 @@ color: var(--ink);
     grid-template-columns: repeat(2, 1fr);
     gap: 22px 28px;
     font-weight: 600;
+    padding: 22px;
 }
 .payments-submit-btn{
     display: flex;
@@ -575,6 +733,40 @@ color:  #6b7280;
     
 }
 /*----------------------------HOME-ISSUES-CARDS-----------------------------*/
+/*----------------------------HOME-ISSUES-CARDS - DARK-MODE -----------------------------*/
+body.dark-mode .formh2{
+    color: #e5e7eb
+}
+body.dark-mode .issue-card{
+   background: #1f2630;
+   border-color: #2c3744;
+   border-top-color: rgb(160, 134, 101);
+    color: #e5e7eb; 
+
+}
+body.dark-mode .issue-cards-details,
+body.dark-mode .issue-cards-time{
+    color: #aab2bd;                            
+}
+body.dark-mode .issue-cards-time{
+    border-top-color: #334155;
+}
+
+
+body.dark-mode #report-button{
+    background: #263241;                       
+    color: #e5e7eb;                           
+    border-color: #334155;                     
+}
+
+
+body.dark-mode #report-button:hover{
+    background: #334155;
+    color: #da9555;                            
+}
+
+
+/*----------------------------HOME-ISSUES-CARDS - DARK-MODE-END-----------------------------*/
 #home-issues-container{
     display: flex;
     flex-direction: column;
@@ -589,16 +781,19 @@ color:  #6b7280;
     box-shadow: 0 4px 14px rgba(21, 27, 34, 0.08);
 }
 .home-issue-card{
-    border-top: 8px solid rgb(90, 73, 63);
-border-left: 8px solid rgb(231, 99, 22);
-border-right: 1px solid rgb(231, 99, 22);
-border-bottom: 1px solid rgb(231, 99, 22);
-padding: 10px;
-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  border: 1px solid #efe1c9;
+  gap: 6px;
+  background: #fbf6ee; 
+padding: 14px 16px;
+border-radius: 14px;
+cursor: pointer;
 transition: 0.4s ease;
 }
 .home-issue-card:hover{
 transform: translateY(-5px);
+ box-shadow: 0 6px 16px rgba(21, 27, 34, 0.08);
 }
 .home-issues{
   display: flex;
@@ -615,19 +810,35 @@ transform: translateY(-5px);
   
 }
 .home-issue-cards-title{
+    margin: 0;
     font-size: 14px;
     font-weight: 700;
+    color: #5b6472;
+    line-height: 1.4;
 
 
 }
 .home-issue-cards-details{
+    margin: 0;
  font-size: 12px;
+ color:#5b6472;
+ line-height: 1.4;
 }
 .home-issue-cards-time{
-
+margin: 0;
     border-top: 1px solid var(--border);
+    padding-top: 8px;
     padding: 4px;
  font-size: 12px;
+ padding-top: 8px;
+ color: #5b6472;
+ border-top: 1px solid #efe1c9;
+}
+
+.home-issues:empty::after{
+    content: "No open issues. All good!";
+    color: #5b6472;
+    font-size: 14px;
 }
 
 
