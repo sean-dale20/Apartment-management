@@ -28,6 +28,7 @@
 .home-contacts{
     border: 1px solid black;
     display: flex;
+    font-family:"Bricolage Grotesque", sans-serif;
 
     height: 120px;
     width: 800px;
@@ -44,35 +45,33 @@ overflow: hidden;
 .home-socials{
 display: flex;
 align-items: center;
-justify-content: center;
-
-    border: 1px solid;
-    font-size: 45px;
-    color: gray;
-
-    width: 200px;
-    gap: 12px;
-
-    flex-shrink: 0;
-    border-right: 1px solid black;
-    padding-right: 28px;
-
+gap: 20px;
+font-size: 50px;
 }
 .home-socials a{
-   
-    color: rgb(90, 83, 83);
+    display: flex;
+   width: 64px;
+   height: 64px;
+    color: rgb(204, 197, 197);
     transition: transform 0.3s ease;
     justify-content: center;
     align-items: center;
-
-    
-    border-radius: 50%;
+    background: #223636;
+    border-radius: 12px;
+  text-decoration: none;
    
 }
 .home-socials .fb:hover{
-    color: #1877F2;
+   
+ background:  #1877F2;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color:transparent;
+    background-clip:text;
     cursor: pointer;
+
     transform: translateY(-7px);
+    
+  
 }
 .home-socials .instagram:hover{
     background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
@@ -82,6 +81,10 @@ justify-content: center;
     cursor: pointer;
 
     transform: translateY(-7px);
+
+
+
+
 }
 
 
@@ -93,7 +96,7 @@ justify-content: center;
     align-items: flex-start;
     justify-content: center;
 
-font-family: 'Courier New', Courier, monospace;
+
 font-size: 25px;
 gap: 8px;
 

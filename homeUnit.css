@@ -1,0 +1,159 @@
+.mini-logo {
+    color: #e9bb66;
+    font-size: 35px;
+    margin-left: 50px;
+}
+
+.mini-units-container{
+       font-family: "Bricolage Grotesque", sans-serif;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 16px;
+    
+    border-radius: 8px;
+    border: none;
+    border-radius: 0;
+background: #151b22;
+    text-align: left;
+    color: #ffffff;
+    
+}
+.mini-units-slogan{
+    display: flex;
+    flex-direction: flex-start;
+       font-family: "Bricolage Grotesque", sans-serif;
+       margin-left: 60px;
+   
+    
+}
+#mini-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    width: 100%;
+    max-width: 340px;
+    margin: 0;
+    margin-left: 55px;
+   
+    
+}
+.mini-unit{
+    
+  
+    height: 50px;
+    background: rgb(213, 241, 213);
+    border-radius: 8px;
+}
+.mini-unit.taken{
+    border: 1px solid rgb(219, 205, 205);
+  
+    height: 50px;
+    background: rgb(224, 168, 62);
+     border-radius: 8px;
+}
+.mini-legend{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 13px;
+    color: #cbcec2;
+}
+.mini-dot{
+    display: inline-block;
+    width: 10px;
+    border-radius: 3px;
+     background: #dcefe5;
+    margin-right: 4px;
+}
+
+
+
+
+
+
+.mini-dot.taken{
+    background: #e9bb66;
+}
+
+
+.mini-color-chart p{
+   margin: 2px 0 0 19px;     /* top right bottom left: push the text 22px right, past the 15px square */
+    white-space: nowrap;    /* keep "Available" on one line */
+    line-height: 15px; 
+         /* same height as the square, so the text lines up with it */
+}
+
+.mini-color-chart{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    font-size: 13px;
+    color: #cbcec2;
+
+    margin-left: 55px;
+     margin-top: 22px;
+
+}
+.mini-color-green{
+    display: flex;
+
+  background-color: rgb(213, 241, 213);
+height: 15px;
+width: 15px;
+
+
+}
+.mini-color-red{
+background-color: rgb(224, 168, 62);
+height: 15px;
+width: 15px;
+}
+@media (max-width: 700px){          /* only applies on screens 700px wide or less */
+
+    /* stack: dark panel on top, form below */
+    #auth-screen{
+        flex-direction: column;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    /* both halves: normal height */
+    .sign-in-info,
+    .Log-in,
+    .sign-up{
+        flex: none;
+    }
+
+    /* dark panel: smaller padding */
+    .mini-units-container{
+        padding: 28px 24px;
+        gap: 20px;
+    }
+
+    /* remove the desktop margin-lefts on phones */
+    .mini-logo,
+    .mini-units-slogan,
+    #mini-grid,
+    .mini-color-chart{
+        margin-left: 0;
+    }
+
+    /* smaller text */
+    .mini-logo{ font-size: 22px; }
+    .mini-units-slogan h2{ font-size: 24px; }
+
+    /* NEW: let the blocks shrink so all 5 fit */
+    .mini-unit,
+    .mini-unit.taken{
+        width: auto;
+    }
+
+    /* white form: smaller padding */
+    .Log-in,
+    .sign-up{
+        padding: 28px 24px;
+    }
+}

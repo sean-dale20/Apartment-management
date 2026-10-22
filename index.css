@@ -333,19 +333,36 @@ padding: 10px 12px;
 }
 
 /*       The tenants grid   */
+/*       SIGN-UP FORM OIN AUTH*/
 #signup-form{
     display: flex;
-    align-items: center;
+    
     flex-direction: column;
     border-radius: 10px;
 
 
     gap: 10px;
-    width: 500px;
-    padding: 70px;
-
-    border: 1px solid black;
+    width: 100%;
+    height: 100%;
     
+
+font-family: "Bricolage Grotesque", sans-serif;
+
+  
+    
+    
+}
+#signup-email{
+border-radius: 12px;
+}
+#signup-password{
+border-radius: 12px;
+}
+#signup-name{
+border-radius: 12px;
+}
+#signup-phone{
+    border-radius: 12px;
 }
 .sign-up.panel{
     align-items: center;
@@ -354,6 +371,7 @@ padding: 10px 12px;
 .sign-up.hidden{
     display: none;
 }
+/*       SIGN-UP FORM OIN AUTH- END*/
 #night-mode-text{
     position: absolute;
      
@@ -392,11 +410,24 @@ margin-left: 10px;
 }
 
 #auth-screen{
-  
-    margin:  auto auto;
-
-    text-align: center;
-      max-width: 980px;
+    display: flex;
+    flex-direction: row;           
+    flex-wrap: nowrap;              
+    align-items: stretch;          
+    align-self: center;            
+    width: calc(100% - 48px);
+    max-width: 980px;               
+    margin: auto;                   
+    gap: 0;
+    padding: 0;
+    border-radius: 28px;           
+    overflow: hidden;               
+    box-shadow: 0 24px 60px rgba(21, 27, 34, 0.25);
+    min-height: 580px;
+}
+.sign-in-info{
+    flex:1 1 360px;
+    display: flex;
 }
 
 #auth-screen h1{
@@ -421,14 +452,17 @@ margin-left: 10px;
 text-decoration: underline;
    
 }
-.Log-in {
-    background: var(--panel-bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 32px 28px;
-    box-shadow: 0 4px 20px rgba(21,27 34,0.86);
+.Log-in,
+.sign-up {
+   flex: 1 1 360px;                /* same width rule as the left half */
+    background: #ffffff;
+    padding: 40px 36px;             /* LOST LINE: space so text doesn't touch the edges */
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     text-align: left;
-    align-items: center;
+   
+   
 }
 
 #login-form input, #signup-form input{
@@ -522,3 +556,52 @@ font-family: "Bricolage Grotesque", sans-serif;
 .occupied-units{ background: #f3dcae; }
 .occupied-units h2,
 .occupied-units p{ color: #5e3d0b; }
+
+/*------------------------------ PHONES / SMALL SCREENS ------------------------------*/
+/*------------------------------ PHONES / SMALL SCREENS ------------------------------*/
+@media (max-width: 700px){          /* only applies on screens 700px wide or less */
+
+    /* stack: dark panel on top, form below */
+    #auth-screen{
+        flex-direction: column;
+        min-height: 0;
+        border-radius: 20px;
+    }
+
+    /* both halves: normal height */
+    .sign-in-info,
+    .Log-in,
+    .sign-up{
+        flex: none;
+    }
+
+    /* dark panel: smaller padding */
+    .mini-units-container{
+        padding: 28px 24px;
+        gap: 20px;
+    }
+
+    /* remove the desktop margin-lefts on phones */
+    .mini-logo,
+    .mini-units-slogan,
+    #mini-grid,
+    .mini-color-chart{
+        margin-left: 0;
+    }
+
+    /* smaller text */
+    .mini-logo{ font-size: 22px; }
+    .mini-units-slogan h2{ font-size: 24px; }
+
+    /* NEW: let the blocks shrink so all 5 fit */
+    .mini-unit,
+    .mini-unit.taken{
+        width: auto;
+    }
+
+    /* white form: smaller padding */
+    .Log-in,
+    .sign-up{
+        padding: 28px 24px;
+    }
+}

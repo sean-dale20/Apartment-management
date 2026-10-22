@@ -1,0 +1,62 @@
+@media (max-width:700px){
+
+#loggedIn{
+    flex-direction: column;
+}
+#side-bar{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 12px;
+}
+#side-bar h1{
+    width: 100%;
+}
+.nav-item{
+    width: auto;
+    margin: 0;
+    padding: 8px 12px;
+}
+
+
+#night-mode,
+#log-out{
+    position: static;
+    width: auto;
+    margin: 0;
+}
+#night-mode-text{
+    display: none;
+}
+.displayed-info{
+     grid-template-columns: repeat(3, 1fr);
+     gap: 8px;
+     margin: 16px 0;
+}
+
+
+
+.total-units,
+.available-units,
+.occupied-units{
+    min-height: 90px;
+    padding: 12px;
+}
+.displayed-info h2{
+    font-size: 26px;
+}
+
+.displayed-info p{
+    font-size: 11px;
+    text-align: center;
+}
+
+
+
+
+
+
+}

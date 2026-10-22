@@ -78,6 +78,28 @@ login.addEventListener('submit', async function(event){
 
 });
 
+async function miniUnits() {
+    const {data, error } = await database
+    .from('units')
+    .select('unit_no , status')
+
+
+    if(error){
+        console.error("failed fetching mini units", error.message)
+    return;
+    }
+    
+    data.forEach(unit =>{
+
+        const block = document.querySelector('.mini-unit[data-unit="' + unit.unit_no + '"]');
+    
+        if(block){
+            block.classList.toggle('taken', unit.status === "occupied");
+        }
+    })
+}
+miniUnits();
+
 //  logged in checks
 
 async function checkLoginStatus(){
@@ -108,7 +130,7 @@ backgroundImage.style.display = 'none';
 
 
     }else {
-        authScreen.style.display = 'block';
+        authScreen.style.display = 'flex';
         loggedInView.style.display = 'none';
         backgroundImage.style.display = 'block';
         document.body.classList.remove('dark-mode');
@@ -128,12 +150,14 @@ const loginpad = document.querySelector('.Log-in');
 
 
 
+
 signUpMessage.addEventListener('click', function(event){
     event.preventDefault();
     loginForm.style.display = 'none';
     signUp.style.display = 'block';
   signUpMessage.style.display = 'none';
 loginpad.style.display = 'none';
+
 
     
 
