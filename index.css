@@ -461,7 +461,12 @@ text-decoration: underline;
     border-radius: 0;
     box-shadow: none;
     text-align: left;
-   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     font-family: "Bricolage Grotesque", sans-serif;
+     font-weight: 500;
    
 }
 
@@ -474,6 +479,7 @@ text-decoration: underline;
     font-family: 'inter', sans-serif;
     background: #fafaf9;
     transition: border-color .15s ease, background .15s ease;
+    border-radius: 12px;
 }
 #login-form button, #signup-form button{
     outline: none;
@@ -559,49 +565,3 @@ font-family: "Bricolage Grotesque", sans-serif;
 
 /*------------------------------ PHONES / SMALL SCREENS ------------------------------*/
 /*------------------------------ PHONES / SMALL SCREENS ------------------------------*/
-@media (max-width: 700px){          /* only applies on screens 700px wide or less */
-
-    /* stack: dark panel on top, form below */
-    #auth-screen{
-        flex-direction: column;
-        min-height: 0;
-        border-radius: 20px;
-    }
-
-    /* both halves: normal height */
-    .sign-in-info,
-    .Log-in,
-    .sign-up{
-        flex: none;
-    }
-
-    /* dark panel: smaller padding */
-    .mini-units-container{
-        padding: 28px 24px;
-        gap: 20px;
-    }
-
-    /* remove the desktop margin-lefts on phones */
-    .mini-logo,
-    .mini-units-slogan,
-    #mini-grid,
-    .mini-color-chart{
-        margin-left: 0;
-    }
-
-    /* smaller text */
-    .mini-logo{ font-size: 22px; }
-    .mini-units-slogan h2{ font-size: 24px; }
-
-    /* NEW: let the blocks shrink so all 5 fit */
-    .mini-unit,
-    .mini-unit.taken{
-        width: auto;
-    }
-
-    /* white form: smaller padding */
-    .Log-in,
-    .sign-up{
-        padding: 28px 24px;
-    }
-}

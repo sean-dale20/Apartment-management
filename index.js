@@ -154,7 +154,7 @@ const loginpad = document.querySelector('.Log-in');
 signUpMessage.addEventListener('click', function(event){
     event.preventDefault();
     loginForm.style.display = 'none';
-    signUp.style.display = 'block';
+    signUp.style.display = 'flex';
   signUpMessage.style.display = 'none';
 loginpad.style.display = 'none';
 
@@ -167,7 +167,7 @@ backToLogIn.addEventListener('click', function(event){
     signUp.style.display = 'none';
     loginForm.style.display = 'block';
      signUpMessage.style.display = 'inline';
-     loginpad.style.display ='block'
+     loginpad.style.display ='flex'
 });
 
 
