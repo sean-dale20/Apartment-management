@@ -60,9 +60,11 @@ body.dark-mode .home-issue-card{
 
 body.dark-mode .home-issue-cards-details,
 body.dark-mode .home-issue-cards-time{
-    color: #aab2bd;
+    color: #e5e7eb;
 }
-
+body.dark-mode .home-issue-cards-title{
+    color: #abad30;             /* light gray, readable on the dark card */
+}
 /* the thin line above the date */
 body.dark-mode .home-issue-cards-time{
     border-top-color: #334155;

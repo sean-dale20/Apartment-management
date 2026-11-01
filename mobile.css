@@ -373,5 +373,27 @@ overflow-x: auto;
 .issues-form-container{
     margin: 10px 0 20px 0;
 }
-
+/* ----- the inputs ----- */
+#edit-form{
+    display: flex;
+    flex-wrap: wrap;
+   
+    gap: 8px;
+}
+#edit-form input{
+    flex: 1 1 100%;
+    padding: 3px;
+    width: 100%;
+    gap: 4px;
+    border: 1.5px solid rgb(64, 85, 64);
+    
+}
+#edit-form button{
+    flex: 1;
+    padding: 2px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #ffffff;
+    background: rgb(75, 52, 52);
+}
 }
