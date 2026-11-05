@@ -694,7 +694,8 @@ margin-bottom: 17px;
     transition: transform 0.4s ease, box-shadow 0.2s ease;
 
     width: 400px;
-    height: 150px;
+    height: auto;
+    min-height: 150px;
 
 }
 .issue-card:hover{

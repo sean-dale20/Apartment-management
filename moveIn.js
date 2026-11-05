@@ -53,6 +53,11 @@ const adminStatus = await isAdmin();
                 document.getElementById('delete-btn').addEventListener('click', async function(){
                     deleteTenant(unit.tenants);
 
+const sure = confirm('Remove' + unit.tenants.name + '? This also payments history');
+if(!sure) return;
+
+
+
                     if(success){
                         unitDetails.innerHTML = `<h2>Teanant removed </h2>`;
                         
@@ -85,6 +90,7 @@ return;
         <input type="text" id="move-in-name" placeholder="Full name" required/>
         <input type="email" id="move-in-email" placeholder="Email" required />
         <input type="tel" id="move-in-phone" placeholder="Phone" />
+        <input type="date" id="move-in-date" required />
         <button type="submit">Move In </button>
         </form>
         `;
@@ -102,8 +108,9 @@ return;
 const name = document.getElementById('move-in-name').value;
 const email = document.getElementById('move-in-email').value;
 const phone = document.getElementById('move-in-phone').value;
+const dateMoved = document.getElementById('move-in-date').value;
 
-const success = await moveInTenant(unit, name, phone, email);
+const success = await moveInTenant(unit, name, phone, email, dateMoved);
     
 //if inserting failed
 
@@ -154,7 +161,7 @@ backToUnitDetails.addEventListener('click', async function(){
 
 
 //inserting the datas inside the database
-async function moveInTenant(unit, name, phone, email) {
+async function moveInTenant(unit, name, phone, email, dateMoved) {
 
     const{ data, error} = await database
     .from('tenants')
@@ -162,7 +169,8 @@ async function moveInTenant(unit, name, phone, email) {
         name: name,
         email: email,
         phone: phone,
-        'unit_no.': unit.unit_no
+        'unit_no.': unit.unit_no,
+        created_at: dateMoved
 
     })
     .select()

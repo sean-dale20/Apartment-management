@@ -143,7 +143,6 @@ font-size: 32px;
 
 
 
-
 /*       hiding of contents of home,tenant,settings    */
 .panel {
     display: none;
@@ -175,8 +174,117 @@ font-size: 32px;
    font-size: 30px;
    padding: 20px;
 }
-#unit-details{
+
+/*-------------------------------------------The edit-form */
+#unit-details #edit-form{
+    display: grid ;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 480px;
+    padding: 20px 22px;
+     background: #fbf6ee;
+       border-radius: 14px;
+        font-family: "Bricolage Grotesque", sans-serif;
+}
+#unit-details #move-in-date{
+    grid-column: 1 / -1;
+}
+#unit-details #edit-form input{
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--ink);
+     background: #ffffff;
+     border: 1px solid #efe1c9;
+      border-radius: 10px;
+      min-width: 0;
+    font-weight: 600;
+
+}
+#unit-details #edit-form input:focus{
+    outline: none;
+    border-color: #b98931;
+    box-shadow: 0 0 0 3px rgba(185, 137, 49, 0.2);
+}
+#unit-details #name{
+    grid-column: 1 / -1;
+}
+#unit-details #edit-form button{
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid #bbae96; 
+    
+   
+}
+#unit-details #edit-form button:hover {
+   
+    border: 1px solid #24221e; 
+    background: #1f2937;
+    color: #ffffff;
+   
+}
+
+
+
+
+/*-------------------------------------------move in   */
+#unit-details #move-in-form{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+ display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 480px;
+    padding: 20px 22px;
+     background: #eef7f2; 
+     border: 1px solid #cfe7da;
+     border-radius: 14px;
+     font-family: "Bricolage Grotesque", sans-serif;
+}
+#unit-details #move-in-form input{
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;                    /* use the form's font, not the browser's */
+    color: var(--ink);
+    background: #ffffff;
+    border: 1px solid #cfe7da;
+    border-radius: 10px;
+    min-width: 0;                            /* let inputs shrink inside the grid columns */
+}
+#unit-details #move-in-form input:focus{
+    outline: none;
+    border-color: #2f7d6d;
+    box-shadow: 0 0 0 3px rgba(47, 125, 109, 0.2);
+}
+#unit-details #move-in-name{
+    grid-column: 1 / -1;                     /* from the first column line to the last = full width */
+}
+#unit-details #move-in-form button{
+    grid-column: 1 / -1;                     /* full width, its own row */
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #2f7d6d;                     /* the same green as your available unit text */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#unit-details #move-in-form button:hover{
+    background: #25685a;                     /* a little darker on hover */
+}
+
+/* pressing the button: a small squeeze instead of the old gray + 110% grow */
+#unit-details #move-in-form button:active{
+    background: #1f574b;
+    transform: scale(0.98);
 }
 #units-grid{
     display: grid;

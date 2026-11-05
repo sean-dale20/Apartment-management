@@ -173,7 +173,8 @@
     height: auto;
     max-height: 400px;
 }
-#unit-details{
+#unit-details {
+   
     order: 2;
 }
 .home-contacts{
