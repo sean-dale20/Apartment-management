@@ -250,24 +250,24 @@ border: 1px solid rgb(136, 132, 132);
 /* ---------- DARK MODE: tenant info card ---------- */
 /* ---------- DARK MODE: tenant info card ---------- */
 
-/* the card: dark warm brown instead of cream */
+
 body.dark-mode #unit-details .units-container{
-    background: #2d3841;          /* "night cream": warm, so it still belongs to the occupied colors */
-    border-color: #3d3426;        /* subtle edge so the card stays visible */
-    color: #f1ece2;               /* light text for everything inside */
+    background: #2d3841;          
+    border-color: #3d3426;       
+    color: #f1ece2;               
 }
 
-/* the values (dale dale, the phone, the email...) */
+
 body.dark-mode #unit-details .units-container p{
-    color: #f1ece2;               /* light, easy to read */
+    color: #f1ece2;               
 }
 
-/* the labels (NAME:, PHONE:...): dimmer, so the values stand out more */
+
 body.dark-mode #unit-details .units-container strong{
-    color: #b8a888;               /* muted gold-gray */
+    color: #b8a888;               
 }
 
-/* the thin line above the buttons */
+
 body.dark-mode #unit-details .btn-container{
     border-top-color: #3d3426;
 }
